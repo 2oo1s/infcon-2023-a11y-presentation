@@ -1,5 +1,5 @@
-import {Box} from "@mui/material";
-import {ArticleImage1, ArticleImage2} from "assets/images";
+import { Box } from "@mui/material";
+import { ArticleImage1, ArticleImage2 } from "assets/images";
 
 export const ArticleIntro = () => {
   return (
@@ -16,7 +16,7 @@ export const ArticleIntro = () => {
     >
       <Box
         sx={{
-          flex: {xs: "none", sm: "none", md: "2"},
+          flex: { xs: "none", sm: "none", md: "2" },
           display: "flex",
           flexDirection: "column",
           gap: "16px",
@@ -57,7 +57,7 @@ export const ArticleIntro = () => {
       <Box
         sx={{
           height: "100%",
-          flex: {xs: "none", sm: "none", md: "1"},
+          flex: { xs: "none", sm: "none", md: "1" },
           borderRadius: {
             xs: "24px 0px 0px 24px",
             md: "24px 0px",

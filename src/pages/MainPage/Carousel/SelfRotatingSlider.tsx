@@ -1,9 +1,9 @@
-import {Box, Grid} from "@mui/material";
-import {carouselItems} from "constant/carousel";
-import {useCallback, useEffect, useRef, useState} from "react";
-import {getRotatedItems} from "service/carousel.service";
-import {CarouselItemCard} from "./CarouselItemCard";
-import {NavigationButton} from "./NavigationButton";
+import { Box, Grid } from "@mui/material";
+import { carouselItems } from "constant/carousel";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { getRotatedItems } from "service/carousel.service";
+import { CarouselItemCard } from "./CarouselItemCard";
+import { NavigationButton } from "./NavigationButton";
 
 export const SelfRotatingSlider = () => {
   const items = carouselItems;
@@ -23,7 +23,7 @@ export const SelfRotatingSlider = () => {
   useEffect(() => {
     sliderTimeout.current = setInterval(() => {
       moveRight();
-    }, 300);
+    }, 5000); // 시간 간격 변경 ... 시간이 충분하지 않으면 정신 없어질 수 있음
 
     return () => {
       if (sliderTimeout.current) clearInterval(sliderTimeout.current);
@@ -42,8 +42,10 @@ export const SelfRotatingSlider = () => {
 
   return (
     <Box
+      // 정적인 요소에 focus
       // tabIndex={0}
-      // onKeyDown={handleKeyDown}
+      tabIndex={-1}
+      onKeyDown={handleKeyDown}
       sx={{
         position: "relative",
         width: "100%",
@@ -51,11 +53,14 @@ export const SelfRotatingSlider = () => {
         pb: "120px",
       }}
     >
-      {/* <NavigationButton
+      {/* 버튼 생성 */}
+      <NavigationButton
         direction="left"
         onClick={moveLeft}
+        // 요소의 기능이나 목적을 알려주는 tag
         aria-label="이전 슬라이드로 이동"
-      /> */}
+      />
+
       <Box
         sx={{
           width: "100%",
@@ -91,11 +96,13 @@ export const SelfRotatingSlider = () => {
           </Grid>
         </Box>
       </Box>
-      {/* <NavigationButton
+
+      {/* 버튼 생성 */}
+      <NavigationButton
         direction="right"
         onClick={moveRight}
         aria-label="다음 슬라이드로 이동"
-      /> */}
+      />
     </Box>
   );
 };

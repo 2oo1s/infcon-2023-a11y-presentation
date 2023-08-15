@@ -1,7 +1,7 @@
 import CheckIcon from "@mui/icons-material/Check";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import "./PaymentDropDown.css";
 
 interface PaymentDropDownProps {
@@ -53,15 +53,15 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
     <div className="dropdown">
       <button
         className="dropdown-button"
-        // tabIndex={0}
+        tabIndex={0}
         ref={buttonRef}
         onClick={handleClickEvent}
-        // onKeyDown={handleKeyEvent}
-        // onFocus={() => setIsButtonFocused(true)}
-        // onBlur={() => setIsButtonFocused(false)}
-        // aria-label={selectedOptionLabel}
-        // aria-haspopup="listbox"
-        // aria-expanded={isExpanded}
+        onKeyDown={handleKeyEvent}
+        onFocus={() => setIsButtonFocused(true)}
+        onBlur={() => setIsButtonFocused(false)}
+        aria-label={selectedOptionLabel}
+        aria-haspopup="listbox"
+        aria-expanded={isExpanded}
       >
         <div className="dropdown-selected">{options[selectedItem]}</div>
         <div className={iconWrapperClass}>
@@ -84,14 +84,14 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
                 onSelectItem(index);
                 toggleDropdown();
               }}
-              // onKeyDown={(event) => handleItemKeyEvent(event, index)}
-              // tabIndex={0}
-              // role="option"
-              // aria-selected={selectedItem === index}
+              onKeyDown={(event) => handleItemKeyEvent(event, index)}
+              tabIndex={0}
+              role="option"
+              aria-selected={selectedItem === index}
             >
               {option}
               {index === selectedItem && (
-                <CheckIcon fontSize="small" style={{marginLeft: "8px"}} />
+                <CheckIcon fontSize="small" style={{ marginLeft: "8px" }} />
               )}
             </div>
           ))}

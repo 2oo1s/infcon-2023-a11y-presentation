@@ -1,12 +1,12 @@
-import {Box, Typography} from "@mui/material";
-import {paymentMethodOptions} from "constant/card";
-import React, {useState} from "react";
-import {ConsentsCheckboxes} from "./ConsentsCheckboxes";
-import {InputBox} from "./InputBox/InputBox";
-import {PaymentDropDown} from "./PaymentDropDown/PaymentDropDown";
-import {PaymentPeriodSwitch} from "./PaymentPeriodSwitch/PaymentPeriodSwitch";
+import { Box, Typography } from "@mui/material";
+import { paymentMethodOptions } from "constant/card";
+import React, { useState } from "react";
+import { ConsentsCheckboxes } from "./ConsentsCheckboxes";
+import { InputBox } from "./InputBox/InputBox";
+import { PaymentDropDown } from "./PaymentDropDown/PaymentDropDown";
+import { PaymentPeriodSwitch } from "./PaymentPeriodSwitch/PaymentPeriodSwitch";
 import "./SubscribeForm.css";
-import {SubscribeSubmitButton} from "./SubscribeSubmitButton";
+import { SubscribeSubmitButton } from "./SubscribeSubmitButton";
 
 interface ContactForm {
   name: string;
@@ -34,8 +34,8 @@ const SubscribeForm = () => {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = event.target;
-    setFormState({...formState, [name]: value});
+    const { name, value } = event.target;
+    setFormState({ ...formState, [name]: value });
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -85,9 +85,9 @@ const SubscribeForm = () => {
             name="name"
             value={formState.name}
             onChange={handleChange}
-            // type="text"
-            // required
-            // autoComplete="name"
+            type="text"
+            required
+            autoComplete="name"
           />
           <InputBox
             id="email"
@@ -95,9 +95,9 @@ const SubscribeForm = () => {
             name="email"
             value={formState.email}
             onChange={handleChange}
-            // type="email"
-            // required
-            // autoComplete="email"
+            type="email"
+            required
+            autoComplete="email"
           />
           <InputBox
             id="phone"
@@ -105,9 +105,9 @@ const SubscribeForm = () => {
             name="phone"
             value={formState.phone}
             onChange={handleChange}
-            // type="tel"
-            // required
-            // autoComplete="tel"
+            type="tel"
+            required
+            autoComplete="tel"
           />
           <InputBox
             id="address"
@@ -115,7 +115,7 @@ const SubscribeForm = () => {
             name="address"
             value={formState.address}
             onChange={handleChange}
-            // autoComplete="street-address"
+            autoComplete="street-address"
           />
           <InputBox
             id="detail-address"
@@ -123,7 +123,7 @@ const SubscribeForm = () => {
             name="detailAddress"
             value={formState.detailAddress}
             onChange={handleChange}
-            // autoComplete="street-address"
+            autoComplete="street-address"
           />
 
           <Box gap={"24px"} display="flex" flexDirection={"column"}>
@@ -169,4 +169,4 @@ const SubscribeForm = () => {
   );
 };
 
-export {SubscribeForm};
+export { SubscribeForm };

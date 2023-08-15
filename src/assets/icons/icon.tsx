@@ -1,4 +1,4 @@
-import {createSvgIcon} from "@mui/material";
+import { createSvgIcon } from "@mui/material";
 
 export const TornadoIcon = createSvgIcon(
   <svg

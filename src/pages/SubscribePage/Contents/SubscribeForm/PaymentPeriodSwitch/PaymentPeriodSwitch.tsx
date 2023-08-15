@@ -26,13 +26,14 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
   return (
     <div
       className="toggle-container"
-      // role="switch"
-      // aria-checked={isAnnual}
-      // aria-label={`Subscription type, ${
-      //   isAnnual ? "연간 구독" : "월간 구독"
-      // } selected`}
-      // tabIndex={0}
-      // onKeyDown={handleKeyDown}
+      // 컴포넌트의 역할을 알려주는 역할
+      role="switch"
+      aria-checked={isAnnual}
+      aria-label={`Subscription type, ${
+        isAnnual ? "연간 구독" : "월간 구독"
+      } selected`}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     >
       <div
         className="toggle-option"
@@ -48,7 +49,7 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
       </div>
       <div
         className="slider"
-        style={{transform: isAnnual ? "translateX(100%)" : "translateX(0)"}}
+        style={{ transform: isAnnual ? "translateX(100%)" : "translateX(0)" }}
       >
         <span className="slider-text">
           {isAnnual ? "연간 구독" : "월간 구독"}
